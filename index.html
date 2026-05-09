@@ -489,10 +489,6 @@ function getInitials(name) {
   return name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
 }
 
-/*
-  Builds the inside of a photo wrapper: an <img> that, if it 404s,
-  hides itself and reveals the sibling initials <span>.
-*/
 function photoInner(firstName, fullName) {
   const ini = getInitials(fullName);
   return `<img src="${photoSrc(firstName)}" alt="${fullName}"
@@ -501,9 +497,9 @@ function photoInner(firstName, fullName) {
   <span class="initials">${ini}</span>`;
 }
 
-/* ─ agendas ─ */
+/* ─ agendas (cleaned of placeholders) ─ */
 const agendas = {
-  "General Secretary": [
+  "Assistant General Secretary": [
     "Reintroduce Vishwakarma Puja in the college after years of neglect.",
     "Organise a grander Saraswati Puja with greater student participation.",
     "Improve the internal campus road conditions by adding block bricks on both sides of the roads for better durability, cleanliness, and walking space.",
@@ -511,26 +507,6 @@ const agendas = {
     "Expand bus routes to cover more areas of Jorhat and nearby highway regions.",
     "Renovate the old auditorium into a multi-purpose student activity and innovation centre.",
     "Encourage better student-administration coordination for faster issue resolution."
-  ],
-  "Cultural": [
-    "Organize a grand multi-day inter-college cultural fest (Phoenix).",
-    "Establish funding for college bands and performing arts clubs.",
-    "Host regular workshops on photography, drama, and local heritage."
-  ],
-  "Sports": [
-    "Renovate the primary playground and courts before the academic year ends.",
-    "Introduce inter-hostel leagues with proper sponsorships and jerseys.",
-    "Procure new, high-quality sports equipment for both major and minor games."
-  ],
-  "Technical": [
-    "Initiate an annual JEC Hackathon with industry-level sponsors.",
-    "Revamp the Technical & Hobby Centre with modern IoT and Robotics kits.",
-    "Facilitate seminars with alumni to guide students on placement preparations."
-  ],
-  "General": [
-    "Improve hostel living conditions, focusing on hygiene and mess food quality.",
-    "Organise large-scale campus-cleaning drives and eco-friendly initiatives.",
-    "Empower students through skill development and welfare programs."
   ],
   "Literary & Magazine": [
     "I promise to work with dedication and sincerity to lead the Literary Society towards greater heights.",
@@ -593,26 +569,25 @@ const agendas = {
 };
 
 function agendaHtml(type) {
-  const list = agendas[type] || agendas["General"];
+  const list = agendas[type] || ["Agenda will be updated soon."];
   return '<ul>' + list.map(i => `<li>${i}</li>`).join('') + '</ul>';
 }
 
 /* ─ candidates ─ */
 const candidates = [
-  { firstName:"bibhuti",    name:"Bibhuti Bhushan Tamuli",  portfolio:"General Secretary",                   position:"General Secretary",                    sem:6, branch:"Mechanical",          agendaType:"General Secretary" },
-  { firstName:"darsan",     name:"Darsan Protim Baruah",    portfolio:"Asst. General Secretary",             position:"Asst. General Secretary",              sem:6, branch:"Electrical",           agendaType:"General Secretary" },
-  { firstName:"kabya",      name:"Kabya Kashyap",            portfolio:"Asst. General Secretary",             position:"Asst. General Secretary",              sem:6, branch:"Instrumentation",      agendaType:"General Secretary" },
-  { firstName:"jitumoni",   name:"Jitumoni Chekanidhara",   portfolio:"Cultural Secretary",                  position:"Cultural Secretary",                sem:6, branch:"Computer Sc & Engg.",  agendaType:"Sports" },
-  { firstName:"pranay",     name:"Pranay Konwar",            portfolio:"General Sports Secretary",            position:"General Sports Secretary",           sem:6, branch:"Computer Sc & Engg.",  agendaType:"Sports" },
+  { firstName:"bibhuti",    name:"Bibhuti Bhushan Tamuli",  portfolio:"General Secretary",                 position:"General Secretary",                  sem:6, branch:"Mechanical",          agendaType:"General Secretary" },
+  { firstName:"darsan",     name:"Darsan Protim Baruah",    portfolio:"Asst. General Secretary",             position:"Asst. General Secretary",              sem:6, branch:"Electrical",           agendaType:"Assistant General Secretary" },
+  { firstName:"jitumoni",   name:"Jitumoni Chekanidhara",   portfolio:"Cultural Secretary",                  position:"Cultural Secretary",                  sem:6, branch:"Computer Sc & Engg.",  agendaType:"Cultural Secretary" },
+  { firstName:"pranay",     name:"Pranay Konwar",            portfolio:"General Sports Secretary",            position:"General Sports Secretary 1",            sem:6, branch:"Electrical",           agendaType:"General Sports Secretary" },
   { firstName:"debanga",    name:"Debanga Raj Munda",        portfolio:"Gymnasium Secretary",                 position:"Gymnasium Secretary",                  sem:6, branch:"Mechanical",          agendaType:"Gymnasium" },
-  { firstName:"kallul",     name:"Kallul Saikia",            portfolio:"Major Games Secretary",               position:"Major Games Secretary",                sem:6, branch:"Mechanical",          agendaType:"Sports" },
-  { firstName:"goonjan",    name:"Goonjan Deori",            portfolio:"Minor Games Secretary",               position:"Minor Games Secretary",                sem:6, branch:"Mechanical",          agendaType:"Sports" },
+  { firstName:"kallul",     name:"Kallul Saikia",            portfolio:"Major Games Secretary",               position:"Major Games Secretary",                sem:6, branch:"Mechanical",          agendaType:"Major Games Secretary" },
+  { firstName:"goonjan",    name:"Goonjan Deori",            portfolio:"Minor Games Secretary",               position:"Minor Games Secretary",                sem:6, branch:"Mechanical",          agendaType:"Minor Games Secretary" },
   { firstName:"anupam",     name:"Anupam Saikia",            portfolio:"Debating & Symposium",                position:"Debating & Symposium",                 sem:4, branch:"Electrical",           agendaType:"Debating & Symposium" },
   { firstName:"pritismita", name:"Pritismita Devi",          portfolio:"Literary & Magazine Secretary",       position:"Literary & Magazine Secretary",        sem:4, branch:"Civil",               agendaType:"Literary & Magazine" },
-  { firstName:"shobhitya",  name:"Shobhitya Raj Borah",     portfolio:"Technical & Hobby Centre Secretary",  position:"Technical & Hobby Centre Secretary",   sem:6, branch:"Mechanical",          agendaType:"Technical & Hobby Centre" },
+  { firstName:"shobhitya",  name:"Shobhitya Raj Borah",     portfolio:"Technical & Hobby Centre Secretary",  position:"Technical & Hobby Centre Secretary", sem:6, branch:"Mechanical",          agendaType:"Technical & Hobby Centre" },
   { firstName:"aghya",      name:"Aghya Bhuyan",             portfolio:"Social Service & Welfare Secretary",  position:"Social Service & Welfare Secretary",   sem:4, branch:"Civil",               agendaType:"Social Service & Welfare" },
-  { firstName:"gunjan",     name:"Gunjan Gogoi",              portfolio:"Boys' Common Room Secretary",         position:"Boys' Common Room Secretary",          sem:6, branch:"Computer Sc & Engg.",  agendaType:"Boys' Common Room" },
-  { firstName:"shruti",     name:"Shruti Deka",               portfolio:"Girls' Common Room Secretary",        position:"Girls' Common Room Secretary",         sem:6, branch:"Civil",               agendaType:"Girls' Common Room" },
+  { firstName:"gunjan",     name:"Gunjan Gogoi",             portfolio:"Boys' Common Room Secretary",         position:"Boys' Common Room Secretary",          sem:6, branch:"Computer Sc & Engg.",  agendaType:"Boys' Common Room" },
+  { firstName:"shruti",     name:"Shruti Deka",              portfolio:"Girls' Common Room Secretary",        position:"Girls' Common Room Secretary",         sem:6, branch:"Civil",               agendaType:"Girls' Common Room" }
 ];
 
 /* ─ render cards ─ */
