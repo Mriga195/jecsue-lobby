@@ -504,9 +504,13 @@ function photoInner(firstName, fullName) {
 /* ─ agendas ─ */
 const agendas = {
   "General Secretary": [
-    "Bridge the communication gap between the administration and the student body.",
-    "Implement digital infrastructure for faster grievance redressal.",
-    "Promote transparency in JECSU fund allocation and expenditure."
+    "Reintroduce Vishwakarma Puja in the college after years of neglect.",
+    "Organise a grander Saraswati Puja with greater student participation.",
+    "Improve the internal campus road conditions by adding block bricks on both sides of the roads for better durability, cleanliness, and walking space.",
+    "Propose the addition of a new college bus to accommodate the growing number of students.",
+    "Expand bus routes to cover more areas of Jorhat and nearby highway regions.",
+    "Renovate the old auditorium into a multi-purpose student activity and innovation centre.",
+    "Encourage better student-administration coordination for faster issue resolution."
   ],
   "Cultural": [
     "Organize a grand multi-day inter-college cultural fest (Phoenix).",
@@ -527,6 +531,64 @@ const agendas = {
     "Improve hostel living conditions, focusing on hygiene and mess food quality.",
     "Organise large-scale campus-cleaning drives and eco-friendly initiatives.",
     "Empower students through skill development and welfare programs."
+  ],
+  "Literary & Magazine": [
+    "I promise to work with dedication and sincerity to lead the Literary Society towards greater heights.",
+    "Along with the Wall Magazine, I aspire to introduce a Technical Magazine that will encourage creativity and innovation beyond literature.",
+    "I will strive to organize literary events independently, beyond Phoenix, ensuring equal participation opportunities for both hostellers and non-hostellers.",
+    "To inspire and guide students, I promise to arrange interactive sessions with renowned literary personalities and writers.",
+    "I aim to create opportunities for students to excel in various competitive and public service examinations by organizing scholarship tests, literary programs, and collaborations with different institutes."
+  ],
+  "Boys' Common Room": [
+    "Renovation of the bcr",
+    "Installing a permanent sound system for the bcr so that small cultural can be held in bcr",
+    "Providing a drinking water facility basically installing a aqua guard",
+    "Building a toilet facility"
+  ],
+  "Gymnasium": [
+    "Proper gym timing for boys and girls.",
+    "Clean gym environment",
+    "Safe and clean drinking water facility.",
+    "Music system for better workout motivation.",
+    "Sunday interaction session with gym trainer.",
+    "Demand for new equipment if needed."
+  ],
+  "Technical & Hobby Centre": [
+    "Elevating the overall technical standard of our college.",
+    "Establishing a \"Hobby Centre Fund\" for the students of JEC. It will provide financial support and equal opportunities for our students in different technical competitions, workshops, Hackathon at any level.",
+    "Restoring the Techno cum Hobby Centre with improved infrastructure, better access to technical resources, and learning materials.",
+    "To ensure a stronger collaboration among all the technical clubs through inter disciplinary projects, shared intiatives and regular hands on session.",
+    "To make campus Wi-Fi more accessible and student friendly and provide institutional access to software such as CAD, simulations etc.",
+    "Turning Technovus into a full fledged and prestigious technical fest of North-East India."
+  ],
+  "Girls' Common Room": [
+    "Renovating the girls common room",
+    "Installing better facilities within the girls common room",
+    "Installing more indoor games for girl students within the girls common room",
+    "Utilising the girls common room as a space for musical and other activities",
+    "Rebuilding the pad machine already installed in the girls common room."
+  ],
+  "Social Service & Welfare": [
+    "Cleanliness & environmental drives.",
+    "Blood donation camps.",
+    "Women Safety Awareness",
+    "Health & Hygienes campaigns",
+    "Stress relief activities during exams",
+    "Skill workshops",
+    "Notes Sharing and study centrer"
+  ],
+  "Debating & Symposium": [
+    "To collaborate with the Training and Placement Cell to organize sessions on soft skills, interview preparation, group discussions, resume communication, and professional etiquette for placements and career growth.",
+    "To conduct mock interviews inspired by UPSC personality tests and PSU/company recruitment processes to help students develop confidence, clarity, and professional communication skills.",
+    "To organize regular debating competitions throughout the academic year to build a vibrant, competitive, and intellectually active debating culture within the college.",
+    "To introduce diverse communication-based events such as Group Discussions (GDs), Extempore, Mock Parliaments, Panel Discussions, JAM sessions, Presentations, and Public Speaking contests to help JECians become well-rounded communicators.",
+    "To encourage participation of JECians in inter-college, state-level, and national-level debating and symposium competitions by providing mentorship and structured preparation sessions.",
+    "To create a platform where students can openly discuss social, technical, national, and campus-related issues through healthy and constructive dialogue.",
+    "To organize symposiums and technical speaking events that bridge communication skills with engineering, innovation, and leadership.",
+    "To promote an inclusive and confident speaking culture where every JECian, regardless of experience, feels encouraged to express ideas and opinions freely.",
+    "To conduct regular workshops and practice sessions to help JECians continuously improve their debating, public speaking, and communication skills.",
+    "To organize masterclasses and interactive sessions with renowned speakers, alumni, professionals, and industry experts to expose JECIANS to real-world communication and leadership skills.",
+    "To broaden the scope of the forum beyond debating by creating opportunities for JECians to regularly practice communication, critical thinking, and confidence-building activities."
   ]
 };
 
@@ -535,24 +597,22 @@ function agendaHtml(type) {
   return '<ul>' + list.map(i => `<li>${i}</li>`).join('') + '</ul>';
 }
 
-/* ─ candidates ─
-   firstName = lowercase first name → maps to images/<firstName>.jpg
-*/
+/* ─ candidates ─ */
 const candidates = [
   { firstName:"bibhuti",    name:"Bibhuti Bhushan Tamuli",  portfolio:"General Secretary",                   position:"General Secretary",                    sem:6, branch:"Mechanical",          agendaType:"General Secretary" },
   { firstName:"darsan",     name:"Darsan Protim Baruah",    portfolio:"Asst. General Secretary",             position:"Asst. General Secretary",              sem:6, branch:"Electrical",           agendaType:"General Secretary" },
   { firstName:"kabya",      name:"Kabya Kashyap",            portfolio:"Asst. General Secretary",             position:"Asst. General Secretary",              sem:6, branch:"Instrumentation",      agendaType:"General Secretary" },
   { firstName:"jitumoni",   name:"Jitumoni Chekanidhara",   portfolio:"Cultural Secretary",                  position:"Cultural Secretary",                sem:6, branch:"Computer Sc & Engg.",  agendaType:"Sports" },
   { firstName:"pranay",     name:"Pranay Konwar",            portfolio:"General Sports Secretary",            position:"General Sports Secretary",           sem:6, branch:"Computer Sc & Engg.",  agendaType:"Sports" },
-  { firstName:"debanga",    name:"Debanga Raj Munda",        portfolio:"Gymnasium Secretary",                 position:"Gymnasium Secretary",                  sem:6, branch:"Mechanical",          agendaType:"Sports" },
+  { firstName:"debanga",    name:"Debanga Raj Munda",        portfolio:"Gymnasium Secretary",                 position:"Gymnasium Secretary",                  sem:6, branch:"Mechanical",          agendaType:"Gymnasium" },
   { firstName:"kallul",     name:"Kallul Saikia",            portfolio:"Major Games Secretary",               position:"Major Games Secretary",                sem:6, branch:"Mechanical",          agendaType:"Sports" },
   { firstName:"goonjan",    name:"Goonjan Deori",            portfolio:"Minor Games Secretary",               position:"Minor Games Secretary",                sem:6, branch:"Mechanical",          agendaType:"Sports" },
-  { firstName:"anupam",     name:"Anupam Saikia",            portfolio:"Debating & Symposium",                position:"Debating & Symposium",                 sem:4, branch:"Electrical",           agendaType:"Cultural" },
-  { firstName:"pritismita", name:"Pritismita Devi",          portfolio:"Literary & Magazine Secretary",       position:"Literary & Magazine Secretary",        sem:4, branch:"Civil",               agendaType:"Cultural" },
-  { firstName:"shobhitya",  name:"Shobhitya Raj Borah",     portfolio:"Technical & Hobby Centre Secretary",  position:"Technical & Hobby Centre Secretary",   sem:6, branch:"Mechanical",          agendaType:"Technical" },
-  { firstName:"aghya",      name:"Aghya Bhuyan",             portfolio:"Social Service & Welfare Secretary",  position:"Social Service & Welfare Secretary",   sem:4, branch:"Civil",               agendaType:"General" },
-  { firstName:"gunjan",     name:"Gunjan Gogoi",              portfolio:"Boys' Common Room Secretary",         position:"Boys' Common Room Secretary",          sem:6, branch:"Computer Sc & Engg.",  agendaType:"General" },
-  { firstName:"shruti",     name:"Shruti Deka",               portfolio:"Girls' Common Room Secretary",        position:"Girls' Common Room Secretary",         sem:6, branch:"Civil",               agendaType:"General" },
+  { firstName:"anupam",     name:"Anupam Saikia",            portfolio:"Debating & Symposium",                position:"Debating & Symposium",                 sem:4, branch:"Electrical",           agendaType:"Debating & Symposium" },
+  { firstName:"pritismita", name:"Pritismita Devi",          portfolio:"Literary & Magazine Secretary",       position:"Literary & Magazine Secretary",        sem:4, branch:"Civil",               agendaType:"Literary & Magazine" },
+  { firstName:"shobhitya",  name:"Shobhitya Raj Borah",     portfolio:"Technical & Hobby Centre Secretary",  position:"Technical & Hobby Centre Secretary",   sem:6, branch:"Mechanical",          agendaType:"Technical & Hobby Centre" },
+  { firstName:"aghya",      name:"Aghya Bhuyan",             portfolio:"Social Service & Welfare Secretary",  position:"Social Service & Welfare Secretary",   sem:4, branch:"Civil",               agendaType:"Social Service & Welfare" },
+  { firstName:"gunjan",     name:"Gunjan Gogoi",              portfolio:"Boys' Common Room Secretary",         position:"Boys' Common Room Secretary",          sem:6, branch:"Computer Sc & Engg.",  agendaType:"Boys' Common Room" },
+  { firstName:"shruti",     name:"Shruti Deka",               portfolio:"Girls' Common Room Secretary",        position:"Girls' Common Room Secretary",         sem:6, branch:"Civil",               agendaType:"Girls' Common Room" },
 ];
 
 /* ─ render cards ─ */
@@ -608,8 +668,7 @@ function openModal(idx) {
   document.getElementById('modalBranch').textContent = c.branch;
   document.getElementById('modalAgenda').innerHTML =
     `<p>Hi, I am <strong>${c.name}</strong>, from the ${c.branch} department, running for the position of ${c.position}. My primary goals for this term are:</p>` +
-    agendaHtml(c.agendaType) +
-    `<br><p><em>"Your vote is your voice. I humbly request your support in the upcoming elections!"</em></p>`;
+    agendaHtml(c.agendaType);
   overlay.classList.add('active');
   document.body.classList.add('modal-open');
   document.getElementById('closeBtn').focus();
