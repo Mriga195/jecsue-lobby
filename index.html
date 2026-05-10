@@ -419,6 +419,23 @@
     padding-top: .8rem;
   }
 
+  .creator-credit {
+    display: block;
+    margin-top: 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: .55rem;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.12);
+  }
+
+  .creator-credit a {
+    color: rgba(255,255,255,.18);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .creator-credit a:hover { color: var(--muted); }
+
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -458,6 +475,7 @@
   <div class="f-title">JECSU 2026</div>
   <p>Jorhat Engineering College &nbsp;·&nbsp; Jorhat-7, Assam</p>
   <div class="hostel-note">Lobby Display · Hostels 3, 4, 5, 7, 8, 9</div>
+  <span class="creator-credit">developed by <a href="https://www.linkedin.com/in/mriganka-mahanta-661981397/" target="_blank" rel="noopener">mriganka mahanta</a></span>
 </footer>
 
 <div class="modal-overlay" id="candidateModal">
@@ -501,7 +519,7 @@ function photoInner(firstName, fullName) {
 const agendas = {
     "General Secretary": [
     "To stay approachable and act as the dedicated voice for every JECian, ensuring student representation at all levels.",
-    "To ensure every student’s grievance is heard, addressed, and resolved promptly and effectively through structured communication with the administration.",
+    "To ensure every student's grievance is heard, addressed, and resolved promptly and effectively through structured communication with the administration.",
     "To promote equal opportunities for all students to participate and excel in various college events and initiatives.",
     "To endeavor to organize a youth festival under the auspices of Assam Science and Technology University (ASTU).",
     "To launch an online JECSU portal designed for seamless complaints, queries, and student guidance.",
@@ -633,7 +651,7 @@ const agendas = {
     "To secure and provide necessary financial support and funding for students participating in external tournaments.",
     "To ensure better management, organization, and professional execution of all internal college sports tournaments.",
     "To work continuously towards the improvement and modernization of the overall sports infrastructure within the campus.",
-    "To provide more dedicated support, resources, and platforms for the growth of girls’ sports in JEC.",
+    "To provide more dedicated support, resources, and platforms for the growth of girls' sports in JEC.",
     "To foster a stronger, more inclusive, and united sports culture throughout Jorhat Engineering College."
   ]
 };
